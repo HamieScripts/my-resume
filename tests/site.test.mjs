@@ -73,7 +73,9 @@ for (const width of [320, 390, 768, 1280, 1600]) {
       assert.equal(await page.locator('.skill-list li').count(), 27);
       assert.equal(await page.locator('.skill-legend li').count(), 6);
       assert.deepEqual(await page.locator('main > section').evaluateAll(sections => sections.map(section => section.getAttribute('aria-labelledby'))), ['name', 'skills-heading', 'work-heading', 'experience-heading', 'education-heading']);
-      assert.equal(await page.locator('.project').count(), 4);
+      assert.equal(await page.locator('.project').count(), 5);
+      assert.ok((await page.locator('.experience').innerText()).includes('includes pre-acquisition tenure'));
+      assert.equal(/OnScale|Solve/.test(await page.locator('.experience').innerText()), false);
       assert.equal(/Your Name|Example Project|private draft|not approved/i.test(await page.locator('body').innerText()), false);
       assert.deepEqual(failures, []);
       if ([390, 1280].includes(width)) {
@@ -131,7 +133,7 @@ test('PDF is two readable A4 pages with CV content, preserved links, and in-boun
       links.push(...await page.getAnnotations());
     }
     const normalised = combined.normalize('NFKC').replace(/\s/g, '');
-    for (const text of ['Jamie Clark', 'R&D Software Engineer & Developer Experience Expert', 'Skills & strengths', '80% of Ansys product teams', 'Component Library & Developer Enablement', 'Application Templates & Agent Enablement', 'Generated Component Documentation', 'Third-Party Design-Language Integration', 'OnScale / Ansys', 'Principal R&D Engineer', 'QA Engineer', 'University of Stirling', "Let's connect"]) {
+    for (const text of ['Jamie Clark', 'R&D Software Engineer & Developer Experience Expert', 'Skills & strengths', '80% of Ansys product teams', 'Shared Component Library', 'Application Template Repository & Agent Enablement', 'Project Delivery & Administration Automation', 'Generated Component Documentation', 'Design Language & Third-Party Integration', 'Ansys', 'Principal R&D Engineer', 'QA Engineer', 'University of Stirling', "Let's connect"]) {
       assert.ok(normalised.includes(text.normalize('NFKC').replace(/\s/g, '')), `PDF missing content: ${text}`);
     }
     assert.equal(/private draft|not approved|C\+\+/i.test(combined), false);

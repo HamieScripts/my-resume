@@ -28,7 +28,6 @@ h1 { font-size: 88px; line-height: 1.05; }
   box-decoration-break: clone;
 }
 .project-caption { padding-top: 10px; }
-.project-caption h3 { max-width: 380px; }
 .project-caption p { font-size: 14px; line-height: 1.75; margin-top: 13px; }
 .project-caption strong { color: var(--color-ink); font-weight: 500; }
 .work { margin-top: 28px; }
@@ -70,7 +69,6 @@ h1 { font-size: 88px; line-height: 1.05; }
   h1 { font-size: 56px; }
   .specialism { font-size: 21px; }
   .split-section { grid-template-columns: 1fr; gap: 16px; padding-top: 20px; }
-  .project-caption h3 { max-width: none; }
   .skill-legend { gap: 10px 16px; margin-bottom: 18px; }
   .skill-legend li { font-size: 11px; }
   .skill-list { gap: 8px; }
@@ -89,25 +87,27 @@ h1 { font-size: 88px; line-height: 1.05; }
   .profile { font-size: 8.5pt; line-height: 1.5; margin-top: 3mm; }
   .profile + .profile { margin-top: 2mm; }
   .intro-actions { margin-top: 2mm; }
-  .section-space { margin-top: 5mm; }
+  .section-space { margin-top: 3mm; }
   .work .section-heading { margin-bottom: 3mm; }
   .project > figure { display: none; }
   .project-image { height: 16mm; aspect-ratio: auto; }
   .project-image img { object-fit: cover; }
   .project-caption { padding-top: 2mm; }
   .project-caption h3 { font-size: 11pt; line-height: 1.3; }
-  .project-caption p { font-size: 8.5pt; line-height: 1.55; margin-top: 2mm; }
+  .project-caption p { font-size: 8.5pt; line-height: 1.45; margin-top: 1mm; }
   .project { display: block; width: 100%; break-inside: avoid; margin-bottom: 0; }
-  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4mm 6mm; }
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2mm 4mm; }
+  .project:last-child { grid-column: 1 / -1; }
   .project:nth-child(n + 3) .project-image { height: 12mm; }
-  .experience.split-section { break-before: auto; margin-top: 5mm; grid-template-columns: 1fr; gap: 3mm; }
+  .experience.split-section { break-before: auto; margin-top: 2mm; grid-template-columns: 1fr; gap: 2mm; }
   .split-section { grid-template-columns: max-content minmax(0, 1fr); gap: 5mm; padding-top: 5mm; }
   .experience-entry h3 { font-size: 12pt; }
   .role-period, .previous-role span { font-size: 8pt; }
   .previous-role { font-size: 9pt; margin-top: 2mm; }
-  .entry-summary, .experience-points { font-size: 8.5pt; line-height: 1.4; }
+  .entry-summary, .experience-points { font-size: 8.5pt; line-height: 1.3; }
+  .entry-summary { margin-top: 1mm; }
   .experience-points li + li { margin-top: 1mm; }
-  .experience-entry + .experience-entry { margin-top: 4mm; padding-top: 3mm; }
+  .experience-entry + .experience-entry { margin-top: 2mm; padding-top: 2mm; }
   .skill-legend { gap: 2mm 4mm; margin-bottom: 3mm; }
   .skill-legend li { font-size: 7pt; }
   .skill-swatch { width: 6px; height: 6px; flex-basis: 6px; }
@@ -120,7 +120,7 @@ h1 { font-size: 88px; line-height: 1.05; }
   .education-entry h3 { font-size: 11pt; }
   .education-entry > p:not(.period) { font-size: 8.5pt; margin-top: 1mm; }
   .education-entry .period { margin-top: 1mm; }
-  .contact { margin-top: 3mm; padding-top: 1mm; }
+  .contact { margin-top: 2mm; padding-top: 1mm; break-inside: auto; }
   .contact h2 { font-size: 16pt; }
-  .colophon { margin-top: 1mm; padding-block: 0; }
+  .colophon { display: none; }
 }
